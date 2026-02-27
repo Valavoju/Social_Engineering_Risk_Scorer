@@ -1,13 +1,13 @@
 import React from "react";
+import { FaChartBar, FaShieldAlt, FaFileAlt } from "react-icons/fa";
 
 function Sidebar() {
   return (
     <div className="sidebar">
       <ul>
-        <li>Dashboard</li>
-        <li>Risk Analysis</li>
-        <li>Analytics</li>
-        <li>Reports</li>
+        <li><FaShieldAlt /> Risk Dashboard</li>
+        <li><FaChartBar /> Analytics</li>
+        <li><FaFileAlt /> Reports</li>
       </ul>
     </div>
   );
