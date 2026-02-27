@@ -22,7 +22,7 @@ function App() {
       );
       setResult(response.data);
     } catch (error) {
-      alert("Backend not connected!");
+      alert("Backend not connected");
       console.error(error);
     }
     setLoading(false);
@@ -33,7 +33,7 @@ function App() {
       className="layout"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.8 }}
     >
       <Navbar />
 
@@ -42,20 +42,20 @@ function App() {
 
         <div className="content">
 
-          {/* HERO SECTION */}
+          {/* HERO */}
           <div className="hero">
             <h1 className="hero-title">
-              AI-Powered Social Engineering Risk Intelligence
+              AI Social Engineering Risk Intelligence
             </h1>
             <p className="hero-subtitle">
-              Detect digital footprint vulnerabilities before attackers exploit them.
+              Analyze public digital footprint exposure and detect vulnerability risks in real-time.
             </p>
           </div>
 
           {/* INPUT SECTION */}
           <div className="input-box">
             <textarea
-              placeholder="Paste social media content here..."
+              placeholder="Paste public social media content..."
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
@@ -69,7 +69,7 @@ function App() {
 
           {/* FOOTER */}
           <footer className="footer">
-            © 2026 Cyber Risk Intelligence | Built for HackWithAI 🚀
+            © 2026 Cyber Risk Intelligence · Built for HackWithAI
           </footer>
 
         </div>
