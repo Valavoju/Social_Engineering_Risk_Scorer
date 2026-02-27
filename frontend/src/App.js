@@ -7,7 +7,8 @@ import Dashboard from "./components/Dashboard";
 import "./App.css";
 
 function App() {
-  const [text, setText] = useState("");
+
+  const [text, setText] = useState("");   // <-- EMPTY by default
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -55,7 +56,7 @@ function App() {
           {/* INPUT SECTION */}
           <div className="input-box">
             <textarea
-              placeholder="Paste public social media content..."
+              placeholder="Paste public social media link or content..."
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
@@ -64,7 +65,7 @@ function App() {
             </button>
           </div>
 
-          {/* DASHBOARD */}
+          {/* RESULTS */}
           <Dashboard result={result} />
 
           {/* FOOTER */}

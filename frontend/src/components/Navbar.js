@@ -1,12 +1,13 @@
 import React from "react";
-import { FaShieldAlt } from "react-icons/fa";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <div className="logo">
-        <FaShieldAlt style={{ marginRight: "10px" }} />
-        Cyber Risk Intelligence
+      <div
+        className="logo glitch"
+        data-text="CYBERRISK INTELLIGENCE"
+      >
+        CYBERRISK INTELLIGENCE
       </div>
     </div>
   );
