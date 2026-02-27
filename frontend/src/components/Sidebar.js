@@ -1,12 +1,22 @@
 import React from "react";
 
-function Sidebar() {
+function Sidebar({ activePage, setActivePage }) {
+
+  const MenuItem = ({ id, label }) => (
+    <div
+      className={`menu-item ${activePage === id ? "active" : ""}`}
+      onClick={() => setActivePage(id)}
+    >
+      {label}
+    </div>
+  );
+
   return (
     <div className="cyber-sidebar">
-      <div className="menu-item">RISK DASHBOARD</div>
-      <div className="menu-item">ANALYTICS</div>
-      <div className="menu-item">REPORTS</div>
-      <div className="menu-item">THREAT SCANNER</div>
+      <MenuItem id="scanner" label="THREAT SCANNER" />
+      <MenuItem id="dashboard" label="RISK DASHBOARD" />
+      <MenuItem id="analytics" label="ANALYTICS" />
+      <MenuItem id="reports" label="REPORTS" />
     </div>
   );
 }

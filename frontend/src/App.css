@@ -1,38 +1,20 @@
-/* ===== GLOBAL ===== */
-
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
   background: radial-gradient(circle at 20% 20%, #0f0f1b, #050509 60%);
   color: #e0f7fa;
-  overflow-x: hidden;
 }
 
-/* ===== NAVBAR ===== */
-
-.navbar {
-  height: 70px;
+.layout {
   display: flex;
-  align-items: center;
-  padding: 0 40px;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  background: rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
-  text-shadow:
-    0 0 5px #00f7ff,
-    0 0 10px #ff00c8;
+  flex-direction: column;
+  height: 100vh;
 }
-
-/* ===== LAYOUT ===== */
 
 .main {
   display: flex;
-  min-height: calc(100vh - 70px);
+  flex: 1;
 }
-
-/* ===== SIDEBAR ===== */
 
 .cyber-sidebar {
   width: 260px;
@@ -42,138 +24,199 @@ body {
   gap: 40px;
   background: rgba(0, 0, 0, 0.7);
   border-right: 1px solid rgba(0, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
 }
 
 .menu-item {
   font-size: 18px;
-  letter-spacing: 2px;
   cursor: pointer;
-  transition: 0.3s ease;
   color: #00f7ff;
-  text-transform: uppercase;
+  transition: 0.3s ease;
 }
 
 .menu-item:hover {
   color: #ff00c8;
-  text-shadow: 0 0 10px #ff00c8;
-  transform: translateX(8px);
+  transform: translateX(6px);
 }
 
-/* ===== CONTENT ===== */
+.menu-item.active {
+  color: #ff00c8;
+  text-shadow: 0 0 15px #ff00c8;
+}
 
 .content {
   flex: 1;
-  padding: 80px 80px;
+  padding: 80px;
+}
+
+.scanner-title {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 60px;
+  text-align: center;
   position: relative;
+  display: inline-block;
 }
-
-/* ===== HERO ===== */
-
-.hero-title {
-  font-size: 52px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: #ffffff;
-  text-shadow:
-    0 0 5px #00f7ff,
-    0 0 20px #ff00c8;
-}
-
-.hero-subtitle {
-  font-size: 20px;
-  color: rgba(224, 247, 250, 0.7);
-  margin-bottom: 50px;
-}
-
-/* ===== INPUT CARD ===== */
 
 .input-box {
   max-width: 750px;
-  background: rgba(15, 15, 30, 0.7);
+  background: rgba(15, 15, 30, 0.8);
   padding: 40px;
   border-radius: 15px;
   border: 1px solid rgba(0, 255, 255, 0.2);
-  box-shadow:
-    0 0 20px rgba(0, 255, 255, 0.2),
-    inset 0 0 30px rgba(255, 0, 200, 0.1);
+  margin-bottom: 60px;
 }
 
-.input-box textarea {
+textarea {
   width: 100%;
   height: 130px;
   padding: 18px;
   border-radius: 10px;
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(0,255,255,0.3);
   background: #0d0d1a;
   color: #00f7ff;
-  font-size: 15px;
   resize: none;
-  outline: none;
 }
 
-.input-box textarea::placeholder {
-  color: rgba(0, 247, 255, 0.4);
-}
-
-/* ===== NEON BUTTON ===== */
-
-.input-box button {
+button {
   margin-top: 25px;
-  padding: 15px 40px;
-  border-radius: 50px;
+  padding: 14px 40px;
+  border-radius: 40px;
+  background: linear-gradient(45deg, #ff00c8, #00f7ff);
   border: none;
   font-weight: bold;
-  letter-spacing: 2px;
-  background: linear-gradient(45deg, #ff00c8, #00f7ff);
-  color: #000;
   cursor: pointer;
-  transition: 0.3s ease;
 }
 
-.input-box button:hover {
-  box-shadow:
-    0 0 20px #00f7ff,
-    0 0 40px #ff00c8;
-  transform: scale(1.05);
-}
-
-/* ===== RESULTS GRID ===== */
-
-.results-grid {
-  margin-top: 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.analytics-cards {
+  display: flex;
   gap: 40px;
 }
 
-.risk-card,
-.factors-card {
-  background: rgba(15, 15, 30, 0.8);
-  padding: 30px;
+.analytics-card {
+  background: rgba(15,15,30,0.8);
+  padding: 40px;
   border-radius: 15px;
-  border: 1px solid rgba(255, 0, 200, 0.2);
-  box-shadow: 0 0 25px rgba(255, 0, 200, 0.15);
+  width: 300px;
 }
 
-.risk-value {
-  font-size: 45px;
-  margin-top: 20px;
-  text-shadow: 0 0 15px currentColor;
-}
-
-.factor-item {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
+.analytics-value {
+  font-size: 40px;
   color: #00f7ff;
 }
 
-/* ===== FOOTER ===== */
+.report-preview {
+  background: rgba(15,15,30,0.8);
+  padding: 40px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
 
-.footer {
-  margin-top: 80px;
-  opacity: 0.5;
-  font-size: 14px;
-  letter-spacing: 1px;
+.download-btn {
+  padding: 15px 40px;
+  border-radius: 40px;
+  background: linear-gradient(45deg, #ff00c8, #00f7ff);
+  border: none;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*        GLITCH EFFECT          */
+/* ============================= */
+
+.glitch {
+  position: relative;
+  color: #ff00c8;
+  text-shadow:
+    0 0 5px #ff00c8,
+    0 0 15px #ff00c8,
+    0 0 25px #ff00c8;
+  animation: flicker 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+  color: #00f7ff;
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  color: #ff00c8;
+  animation: glitchBottom 1.5s infinite linear alternate-reverse;
+}
+
+/* Glitch Animations */
+
+@keyframes glitchTop {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(0);
+  }
+  20% {
+    clip: rect(0, 9999px, 40px, 0);
+    transform: translate(-5px, -3px);
+  }
+  40% {
+    clip: rect(0, 9999px, 10px, 0);
+    transform: translate(5px, 2px);
+  }
+  60% {
+    clip: rect(0, 9999px, 50px, 0);
+    transform: translate(-3px, 1px);
+  }
+  80% {
+    clip: rect(0, 9999px, 25px, 0);
+    transform: translate(3px, -2px);
+  }
+  100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(0);
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(0);
+  }
+  20% {
+    clip: rect(60px, 9999px, 100px, 0);
+    transform: translate(5px, 3px);
+  }
+  40% {
+    clip: rect(30px, 9999px, 80px, 0);
+    transform: translate(-5px, -2px);
+  }
+  60% {
+    clip: rect(70px, 9999px, 120px, 0);
+    transform: translate(3px, 1px);
+  }
+  80% {
+    clip: rect(40px, 9999px, 90px, 0);
+    transform: translate(-3px, 2px);
+  }
+  100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(0);
+  }
+}
+
+/* Neon flicker */
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  5% { opacity: 0.8; }
+  10% { opacity: 1; }
+  15% { opacity: 0.9; }
+  20% { opacity: 1; }
+  100% { opacity: 1; }
 }

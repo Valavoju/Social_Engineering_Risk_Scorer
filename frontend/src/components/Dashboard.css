@@ -1,0 +1,70 @@
+.dashboard-wrapper {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+/* CIRCLE */
+
+.risk-circle-container {
+  position: relative;
+}
+
+.progress-ring-bg {
+  fill: transparent;
+  stroke: #111;
+}
+
+.progress-ring-fill {
+  fill: transparent;
+  stroke: #ff00c8;
+  transition: stroke-dashoffset 0.3s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.risk-score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  text-align: center;
+}
+
+.severity-label {
+  font-size: 14px;
+  margin-top: 6px;
+  color: #00f7ff;
+}
+
+/* FACTORS */
+
+.factors-section {
+  width: 400px;
+}
+
+.factor-bar {
+  margin-bottom: 25px;
+}
+
+.bar-wrapper {
+  background: #111;
+  height: 8px;
+  border-radius: 10px;
+  margin: 6px 0;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff00c8, #00f7ff);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.points {
+  color: #00f7ff;
+  font-size: 14px;
+}
