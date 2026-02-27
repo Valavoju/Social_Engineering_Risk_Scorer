@@ -1,20 +1,18 @@
+/* ================= GLOBAL ================= */
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0b0f19;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0b0f19, #111827);
   color: white;
 }
+
+/* ================= LAYOUT ================= */
 
 .layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-}
-
-.navbar {
-  background-color: #141b2d;
-  padding: 15px 30px;
-  border-bottom: 1px solid #1e2638;
+  min-height: 100vh;
 }
 
 .main {
@@ -22,11 +20,28 @@ body {
   flex: 1;
 }
 
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: linear-gradient(90deg, #4f9cf9, #9333ea);
+  padding: 18px 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ================= SIDEBAR ================= */
+
 .sidebar {
   width: 220px;
-  background-color: #141b2d;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
   padding: 20px;
-  border-right: 1px solid #1e2638;
+  border-right: 1px solid rgba(255,255,255,0.08);
 }
 
 .sidebar ul {
@@ -37,46 +52,92 @@ body {
 .sidebar li {
   margin-bottom: 15px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.content {
-  flex: 1;
-  padding: 30px;
+.sidebar li:hover {
+  color: #4f9cf9;
 }
+
+/* ================= HERO ================= */
+
+.hero {
+  margin-bottom: 40px;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4f9cf9, #9333ea, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  margin-top: 15px;
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+/* ================= INPUT BOX ================= */
 
 .input-box {
-  background-color: #141b2d;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 textarea {
   width: 100%;
-  height: 120px;
-  background-color: #1e2638;
+  height: 130px;
+  background: rgba(255,255,255,0.08);
   border: none;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #4f9cf9;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-}
-
-.card {
-  background-color: #141b2d;
-  padding: 20px;
   border-radius: 10px;
+  padding: 14px;
+  color: white;
+  resize: none;
   margin-bottom: 15px;
 }
+
+/* ================= BUTTON ================= */
+
+button {
+  padding: 14px 24px;
+  background: linear-gradient(90deg, #4f9cf9, #9333ea);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 25px rgba(147, 51, 234, 0.7);
+  transform: translateY(-3px);
+}
+
+/* ================= CARDS ================= */
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* ================= CIRCLE METER ================= */
 
 .circle-wrapper {
   display: flex;
@@ -103,4 +164,14 @@ button {
   justify-content: center;
   font-size: 28px;
   font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }

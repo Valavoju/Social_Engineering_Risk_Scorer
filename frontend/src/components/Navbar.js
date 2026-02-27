@@ -1,10 +1,21 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function Navbar() {
   return (
-    <div className="navbar">
-      <h2>🛡️ Cyber Risk Intelligence</h2>
-    </div>
+    <motion.div
+      className="navbar"
+      initial={{ opacity: 0, y: -40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="logo">
+        🛡️ Cyber Risk Intelligence
+      </div>
+      <div className="nav-actions">
+        <button className="logout-btn">Logout</button>
+      </div>
+    </motion.div>
   );
 }
 
